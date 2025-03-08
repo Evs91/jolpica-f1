@@ -12,16 +12,16 @@ services:
     command: sleep infinity
 
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-    network_mode: service:db
+    network_mode: service:f1db
 
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
-  db:
+  f1db:
     image: postgis/postgis:16-3.4
     restart: unless-stopped
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - f1db-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: jolpica
@@ -48,5 +48,5 @@ services:
 
 
 volumes:
-  postgres-data:
+  f1db-data:
   app-cache:
