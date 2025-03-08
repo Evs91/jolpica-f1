@@ -34,7 +34,8 @@ services:
       - f1db
   redis:
     image: redis
-    network_mode: service:db
+    networks:
+      - f1db
     ports:
        - 6379:6379
        
