@@ -30,7 +30,7 @@ services:
     #   - 5432:9999
 
   redis:
-    build: ./redis
+    image: redis
     network_mode: service:db
 
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
